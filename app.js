@@ -55,4 +55,71 @@ const renderRecipes = (recipesToRender) => {
 // Initialize
 // =======================
 
-renderRecipes(recipes);
+// ===============================
+// Helper – Active Button Highlight
+// ===============================
+
+const setActive = (clickedBtn) => {
+    document.querySelectorAll('button').forEach(btn =>
+        btn.classList.remove('active')
+    );
+    clickedBtn.classList.add('active');
+};
+
+
+// ===============================
+// Filter Functions (PURE)
+// ===============================
+
+const showAll = (e) => {
+    renderRecipes(recipes);
+    setActive(event.target);
+};
+
+const filterEasy = () => {
+    const result = recipes.filter(r => r.difficulty === "easy");
+    renderRecipes(result);
+    setActive(event.target);
+};
+
+const filterMedium = () => {
+    const result = recipes.filter(r => r.difficulty === "medium");
+    renderRecipes(result);
+    setActive(event.target);
+};
+
+const filterHard = () => {
+    const result = recipes.filter(r => r.difficulty === "hard");
+    renderRecipes(result);
+    setActive(event.target);
+};
+
+const filterQuick = () => {
+    const result = recipes.filter(r => r.time < 30);
+    renderRecipes(result);
+    setActive(event.target);
+};
+
+
+// ===============================
+// Sort Functions
+// ===============================
+
+const sortByName = () => {
+    const sorted = [...recipes].sort((a, b) =>
+        a.title.localeCompare(b.title)
+    );
+
+    renderRecipes(sorted);
+    setActive(event.target);
+};
+
+const sortByTime = () => {
+    const sorted = [...recipes].sort((a, b) =>
+        a.time - b.time
+    );
+
+    renderRecipes(sorted);
+    setActive(event.target);
+};
+

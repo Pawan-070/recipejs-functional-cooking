@@ -16,10 +16,31 @@
 </header>
 
 <main>
-    <div id="recipe-container">
-        <!-- Recipe cards will be rendered here by JavaScript -->
+
+    <!-- Controls -->
+    <div class="controls">
+
+        <!-- Filters -->
+        <div class="filter-group">
+            <button onclick="showAll()">All</button>
+            <button onclick="filterEasy()">Easy</button>
+            <button onclick="filterMedium()">Medium</button>
+            <button onclick="filterHard()">Hard</button>
+            <button onclick="filterQuick()">Quick (&lt; 30 min)</button>
+        </div>
+
+        <!-- Sort -->
+        <div class="sort-group">
+            <button onclick="sortByName()">Sort A-Z</button>
+            <button onclick="sortByTime()">Fastest First</button>
+        </div>
+
     </div>
+
+    <div id="recipe-container"></div>
+
 </main>
+
 
 <script src="app.js"></script>
 </body>
