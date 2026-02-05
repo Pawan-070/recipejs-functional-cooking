@@ -17,29 +17,52 @@
 
 <main>
 
-    <!-- Controls -->
+    <!-- Filter / Sort Controls -->
     <div class="controls">
 
-        <!-- Filters -->
-        <div class="filter-group">
-            <button onclick="showAll()">All</button>
-            <button onclick="filterEasy()">Easy</button>
-            <button onclick="filterMedium()">Medium</button>
-            <button onclick="filterHard()">Hard</button>
-            <button onclick="filterQuick()">Quick (&lt; 30 min)</button>
-        </div>
+    <button onclick="RecipeApp.showAll()">All</button>
 
-        <!-- Sort -->
-        <div class="sort-group">
-            <button onclick="sortByName()">Sort A-Z</button>
-            <button onclick="sortByTime()">Fastest First</button>
-        </div>
+    <button onclick="RecipeApp.filterEasy()">Easy</button>
+    <button onclick="RecipeApp.filterMedium()">Medium</button>
+    <button onclick="RecipeApp.filterHard()">Hard</button>
 
-    </div>
+    <button onclick="RecipeApp.filterQuick()">Quick (&lt;30m)</button>
+
+    <button onclick="RecipeApp.sortByName()">A–Z</button>
+    <button onclick="RecipeApp.sortByTime()">Fastest</button>
+
+</div>
+<!-- Search + Controls -->
+<div class="top-bar">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search recipes..."
+    />
+
+    <button onclick="RecipeApp.showAll()">All</button>
+    <button onclick="RecipeApp.filterEasy()">Easy</button>
+    <button onclick="RecipeApp.filterMedium()">Medium</button>
+    <button onclick="RecipeApp.filterHard()">Hard</button>
+    <button onclick="RecipeApp.filterQuick()">Quick</button>
+    <button onclick="RecipeApp.sortByName()">A–Z</button>
+    <button onclick="RecipeApp.sortByTime()">Fastest</button>
+    <button onclick="RecipeApp.showFavorites()">❤️ Favorites</button>
+
+</div>
+
+<!-- Counter -->
+<p id="recipe-count"></p>
+
+<div id="recipe-container"></div>
+
+
 
     <div id="recipe-container"></div>
 
 </main>
+
 
 
 <script src="app.js"></script>
