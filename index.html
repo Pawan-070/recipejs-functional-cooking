@@ -1,70 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RecipeJS - Your Functional Cooking Companion</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RecipeJS - Your Functional Cooking Companion</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>🍳 RecipeJS</h1>
+            <p>Your Functional Cooking Companion</p>
+        </header>
 
-<body>
+        <main>
+            <!-- Controls MUST be OUTSIDE recipe-container -->
+            <section class="controls">
+                <div class="filter-group">
+                    <h3>Filter by Difficulty:</h3>
+                    <div class="button-group">
+                        <button class="filter-btn active" data-filter="all">
+                            Show All
+                        </button>
+                        <button class="filter-btn" data-filter="easy">
+                            Easy
+                        </button>
+                        <button class="filter-btn" data-filter="medium">
+                            Medium
+                        </button>
+                        <button class="filter-btn" data-filter="hard">
+                            Hard
+                        </button>
+                        <button class="filter-btn" data-filter="quick">
+                            Quick Recipes (&lt; 30 min)
+                        </button>
+                    </div>
+                </div>
 
-<header>
-    <h1>Welcome to Recipe JS!</h1>
-    <h1>🍳 Recipe JS</h1>
-    <p>Your Functional Cooking Companion</p>
-</header>
+                <div class="sort-group">
+                    <h3>Sort by:</h3>
+                    <div class="button-group">
+                        <button class="sort-btn" data-sort="name">
+                            Name (A-Z)
+                        </button>
+                        <button class="sort-btn" data-sort="time">
+                            Time (Fastest)
+                        </button>
+                        <button class="sort-btn" data-sort="none">
+                            Default
+                        </button>
+                    </div>
+                </div>
+            </section>
 
-<main>
+            <!-- Recipe container must be EMPTY -->
+            <div id="recipe-container">
+                <!-- Recipe cards will be rendered here by JavaScript -->
+            </div>
+        </main>
 
-    <!-- Filter / Sort Controls -->
-    <div class="controls">
-
-    <button onclick="RecipeApp.showAll()">All</button>
-
-    <button onclick="RecipeApp.filterEasy()">Easy</button>
-    <button onclick="RecipeApp.filterMedium()">Medium</button>
-    <button onclick="RecipeApp.filterHard()">Hard</button>
-
-    <button onclick="RecipeApp.filterQuick()">Quick (&lt;30m)</button>
-
-    <button onclick="RecipeApp.sortByName()">A–Z</button>
-    <button onclick="RecipeApp.sortByTime()">Fastest</button>
-
-</div>
-<!-- Search + Controls -->
-<div class="top-bar">
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 Search recipes..."
-    />
-
-    <button onclick="RecipeApp.showAll()">All</button>
-    <button onclick="RecipeApp.filterEasy()">Easy</button>
-    <button onclick="RecipeApp.filterMedium()">Medium</button>
-    <button onclick="RecipeApp.filterHard()">Hard</button>
-    <button onclick="RecipeApp.filterQuick()">Quick</button>
-    <button onclick="RecipeApp.sortByName()">A–Z</button>
-    <button onclick="RecipeApp.sortByTime()">Fastest</button>
-    <button onclick="RecipeApp.showFavorites()">❤️ Favorites</button>
-
-</div>
-
-<!-- Counter -->
-<p id="recipe-count"></p>
-
-<div id="recipe-container"></div>
-
-
-
-    <div id="recipe-container"></div>
-
-</main>
-
-
-
-<script src="app.js"></script>
-</body>
+        <script src="app.js"></script>
+    </body>
 </html>
